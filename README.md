@@ -28,16 +28,6 @@ We focus on 10 high-burden NCDs using data from the **IHME Global Burden of Dise
 ---
 
 
-## Visual Highlights
-
-Here’s a sneak peek of the insights we found (click to expand):
-
-<img src="https://raw.githubusercontent.com/lizziewangliz/Duke-Health-Medicaid-Expansion-Analysis-/main/figures/medicaid_effects_dalys.png" width="600"/>
-
-> **Figure:** Medicaid Expansion's Impact on DALYs – Steepest declines observed in Early adopter states.
-
----
-
 ## Methodology
 
 We used a two-step approach to uncover causal impacts:
@@ -59,9 +49,9 @@ We used a two-step approach to uncover causal impacts:
 ### **Key Findings**
 | Expansion Group | Impact | Notes |
 |-----------------|--------|-------|
-| **Early**       | ✅ Strongest improvement | Declines in DALYs, Deaths for CKD and Opioid disorders |
-| **Mid**         | ⚠️ Mixed results | Only significant when year FE included |
-| **Late**        | ❌ Minimal effect | Shorter post-expansion period limited results |
+| **Early**       | Strongest improvement | Declines in DALYs, Deaths for CKD and Opioid disorders |
+| **Mid**         | Mixed results | Only significant when year FE included |
+| **Late**        | Minimal effect | Shorter post-expansion period limited results |
 
 ### 👥 **Demographic Insights**
 - **Men** consistently showed higher Deaths and DALYs.
