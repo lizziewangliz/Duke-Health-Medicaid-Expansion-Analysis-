@@ -1,52 +1,77 @@
-# Medicaid Expansion & Non-Communicable Disease Outcomes
+# Medicaid Expansion & Non-Communicable Disease Outcomes (2010–2019)
 
-**Type:** Capstone Team Project  
-**Client:** Duke Health  
-**Tools:** R, ggplot2, dplyr, Difference-in-Differences, Fixed Effects Models  
-**Timeline:** Spring 2025  
-**My Role:** Data Analyst – Causal Inference & Visualization
+**Team 32 – Duke MQM Capstone (Spring 2025)**  
+**Client:** Duke Health | **Role:** Data Analyst  
+**Repo Maintainer:** [Lizzie Wang](https://github.com/lizziewangliz)
 
 ---
 
-## Overview
+## Project Overview
 
-This project explores how Medicaid expansion under the ACA impacted non-communicable disease (NCD) outcomes across U.S. states. Using a natural experiment framework from staggered expansion timing (Early, Mid, Late, Never), we assessed how access to care affected four outcomes:  
-- **Deaths**  
-- **DALYs (Disability-Adjusted Life Years)**  
-- **Prevalence**  
+This project evaluates the impact of Medicaid expansion on non-communicable disease (NCD) outcomes across U.S. states. Taking advantage of the staggered adoption of Medicaid expansion under the Affordable Care Act (ACA), we use **causal inference techniques** to assess how access to care affected:
+
+- **Deaths**
+- **DALYs (Disability-Adjusted Life Years)**
+- **Prevalence**
 - **Incidence**
 
----
-
-## Project Structure
-
-- `Data Cleaning.docx` – Preprocessing strategy and selection logic
-- `Team 32 Capstone R Code.R` – Clean, modular R scripts for:
-  - EDA & visualizations
-  - t-test-based disease selection
-  - Difference-in-Differences and Fixed Effects modeling
-- `Capstone Duke Health.pdf` – Final presentation with findings
-- `Final Deliverables Guide.docx` – Guide to project artifacts
+We focus on 10 high-burden NCDs using data from the **IHME Global Burden of Disease (GBD)** dataset (2010–2019).
 
 ---
 
-## My Contributions
-- Cleaned and reshaped multi-source health data (~120K observations)
-- Wrote custom R functions for t-tests, disease filtering, and visual analysis
-- Visualized disease trends by year, sex, and age group
-- Conducted causal inference using DiD & FE models to evaluate policy effects
+## Research Questions
+
+1. How did Medicaid expansion affect disease burden across different states?
+2. Are outcomes significantly different in **Early**, **Mid**, or **Late** expansion states versus those that never expanded?
+3. Which demographic groups saw the greatest health outcome shifts?
 
 ---
 
-## Key Findings
-- Early-expansion states saw significant **reductions** in deaths and DALYs from kidney disease, opioid use, and substance abuse
-- Mid- and Late-expansion states showed mixed or lagged effects
-- **Year fixed effects** were critical for identifying robust policy-driven improvements
-- Most disease burden was concentrated in adults aged 50–69
+
+## Visual Highlights
+
+Here’s a sneak peek of the insights we found (click to expand):
+
+<img src="https://raw.githubusercontent.com/lizziewangliz/Duke-Health-Medicaid-Expansion-Analysis-/main/figures/medicaid_effects_dalys.png" width="600"/>
+
+> **Figure:** Medicaid Expansion's Impact on DALYs – Steepest declines observed in Early adopter states.
 
 ---
 
-## Selected Diseases (Top 10 NCDs)
+## Methodology
+
+We used a two-step approach to uncover causal impacts:
+
+### 1. **T-Test Filtering for Disease Selection**
+- Compared pre- vs post-expansion periods (2010–2013 vs 2014–2019).
+- Selected diseases with statistically significant changes (p < 0.05).
+
+### 2. **Causal Inference: DiD and Fixed Effects**
+- **Difference-in-Differences (DiD)**: Estimates treatment effect using treat_group × post interaction.
+- **Fixed Effects Models**:
+  - **State FE**: Controls for time-invariant differences across states.
+  - **Year FE**: Adjusts for national policy/time shocks.
+
+---
+
+## Results Summary
+
+### **Key Findings**
+| Expansion Group | Impact | Notes |
+|-----------------|--------|-------|
+| **Early**       | ✅ Strongest improvement | Declines in DALYs, Deaths for CKD and Opioid disorders |
+| **Mid**         | ⚠️ Mixed results | Only significant when year FE included |
+| **Late**        | ❌ Minimal effect | Shorter post-expansion period limited results |
+
+### 👥 **Demographic Insights**
+- **Men** consistently showed higher Deaths and DALYs.
+- **Older adults (50–69)** bore the highest burden.
+- **Substance Use Disorders** had the steepest pre/post policy impact.
+
+---
+
+## Selected Diseases (N=10)
+
 1. Substance use disorders  
 2. Drug use disorders  
 3. Opioid use disorders  
@@ -60,21 +85,26 @@ This project explores how Medicaid expansion under the ACA impacted non-communic
 
 ---
 
-## Technologies & Skills
-- R (data cleaning, t-tests, panel models, ggplot2)
-- Policy evaluation methods: DiD, fixed effects
-- GitHub project documentation
+## My Contributions
+
+As part of Team 32, I was responsible for:
+- Writing R code for t-tests, data wrangling, and EDA visualizations
+- Creating disease and demographic trend plots
+- Interpreting causal models and generating policy insights
 
 ---
 
-## Lessons Learned
-- Data cleaning across 16 CSVs taught me to modularize code and automate validation  
-- Fixed effects models revealed the importance of controlling for national trends  
-- Visual storytelling was key for stakeholder communication with Duke Health
+## License & Acknowledgments
+
+This is a student-led academic project for Duke MQM. All data sourced from [IHME](https://www.healthdata.org/gbd).  
+Special thanks to Duke Health and our faculty advisor.
 
 ---
 
-## Team Acknowledgment
-This was a team project for Duke MQM’s capstone. Teammates included:
-- Richard Xie, Danielle Dawazhuoma, Shrishti Agarwal, Utkarsh Gupta, Lizzie Wang  
-Special thanks to our faculty advisor and Duke Health for their guidance.
+## How to Navigate
+- Read `/docs/Data Cleaning.docx` for prep methodology
+- Explore `/scripts/Team 32 Capstone R Code.R` for full analysis workflow
+- Check `Capstone Duke Health.pdf` for final insights
+
+---
+
