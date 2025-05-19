@@ -53,7 +53,7 @@ We used a two-step approach to uncover causal impacts:
 | **Mid**         | Mixed results | Only significant when year FE included |
 | **Late**        | Minimal effect | Shorter post-expansion period limited results |
 
-### 👥 **Demographic Insights**
+### **Demographic Insights**
 - **Men** consistently showed higher Deaths and DALYs.
 - **Older adults (50–69)** bore the highest burden.
 - **Substance Use Disorders** had the steepest pre/post policy impact.
